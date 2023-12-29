@@ -1,15 +1,17 @@
-package com.example.foodapp.api
+package com.example.foodapp.foodBookmark
 
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
+import org.jetbrains.annotations.NotNull
 
-@Entity(tableName = "meals")
+@Entity(tableName = "bookmarkAll")
 @Parcelize
-data class Meal(
+data class Bookmark(
     val dateModified: String?,
     @PrimaryKey
+    @NotNull
     val idMeal: String,
     val strArea: String,
     val strCategory: String,
@@ -60,5 +62,7 @@ data class Meal(
     val strMeasure9: String?,
     val strSource: String?,
     val strTags: String?,
-    val strYoutube: String?
+    val strYoutube: String?,
+
+
 ) : Parcelable
